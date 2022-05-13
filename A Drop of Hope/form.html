@@ -1,0 +1,81 @@
+<html>
+    <head>
+    <title>Welcome to My Form</title>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+        <script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+
+    <script>
+        function SubForm (){
+            $.ajax({
+                url:"https://api.apispreadsheets.com/data/17381/",
+                type:"post",
+                data:$("#myForm").serializeArray(),
+                success: function(){
+                    alert("Form Data Submitted :)")
+                },
+                error: function(){
+                    alert("There was an error :(")
+                }
+            });
+        }
+    </script>
+    <link href="form.css" rel="stylesheet">
+    </head>
+    <body> 
+        <div id="root"></div>
+        <div class="form-box">
+        <h1>Enter Your Details</h1>
+        <form id="myForm" onsubmit="">
+            <label id="lbl"> USERNAME</label>
+            <input type="text" name="name" value="" id="name" placeholder="Enter Your Name" required ><br> <br><!--Default text via value-->
+            <label id="lbl"> GENDER</label>
+            <input type="radio" name="gender" id="gender"  value="Male" > Male
+            <input type="radio" name="gender" id="gender"  value="Female" > Female
+            <input type="radio" name="gender" id="gender"  value="Other" > Other <br><br> <!--name to choose only one of the text boxes-->
+            <label id="lbl">EMAIL ID</label>
+           <input type="text" name="email" value="" placeholder="Enter Your Email-ID" id="email" aria-required="true" ><br> <br>
+            <label id="lbl">AGE</label>
+            <input type="text" name="age" id="age" ><br> <br>
+            <label id="lbl"> FEEDBACK </label>
+            <textarea name="MESSAGE" rows="10" columns="70" id="area"></textarea> <br> <br>
+            
+        </form>
+        <button onclick='SubForm()' id="btn">Click To Submit!</button>
+        </div>
+<!--
+        <script type="text/babel">
+        class Index extends React.Component{
+            constructor(){//We need to use constructor for State
+                super();//Super method
+                this.state = {count:0} //Initializing count and setting its value to 0
+                this.btnClick = this.btnClick.bind(this)
+            }
+            btnClick(){
+                this.setState({count:this.state.count+1})
+            }
+            render()
+            {
+                return(
+                    <div>
+                        <h1>Likes {this.state.count}</h1>
+                        <button onClick={this.btnClick.bind(this)}>Submit</button>
+                    </div>//We have to use bind function for all function call
+                );
+            }
+        }
+        
+        ReactDOM.render(
+            <div>
+            <Index />
+            </div>
+            ,document.getElementById("root")
+        );
+    </script>
+       -->
+    </body>
+</html>

@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+    color: white;
+}
+.Headline{
+    font-size: xxx-large;
+    font-family: monospace;
+    text-align: center;
+}
+.logo{
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+td:hover{
+    opacity:0.5;
+    background-color:rgba(0, 0, 0, 0.212);
+}
+
+#tb{
+    border: 2px;
+    border-color: red;
+    border-collapse: collapse;
+    width: 95%;
+    height:1300px;
+}
+
+
+
+#divison{
+    margin-left: 3%;
+}
+#link_box{
+    text-decoration:none;
+    color: inherit;
+}
+.link
+{
+    text-align: center;
+    font-family: monospace;
+    font-size: xx-large;
+    padding:50px;
+}
+#box{
+    height: 100%;
+    width: 100%;
+}
